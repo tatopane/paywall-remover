@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Paywall remover",
+  "version": "1.0",
+  "description": "Prepends 'https://smry.ai/' to all links on specified domains",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
